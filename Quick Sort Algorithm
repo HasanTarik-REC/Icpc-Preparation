@@ -16,7 +16,6 @@ int partition(int array[], int low, int high) {
   swap(&array[i + 1], &array[high]);
   return (i + 1);
 }
-
 void quickSort(int array[], int low, int high) {
   if (low < high) {
     int pi = partition(array, low, high);
@@ -24,18 +23,14 @@ void quickSort(int array[], int low, int high) {
     quickSort(array, pi + 1, high);
   }
 }
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; ++i) {
-    printf("%d  ", array[i]);
-  }
-  printf("\n");
-}
 int main() {
   int data[] = {8, 7, 2, 1, 0, 9, 6};
   int n = sizeof(data) / sizeof(data[0]);
   printf("Unsorted Array\n");
-  printArray(data, n);
+  for (int i = 0; i < n; i++) 
+    printf("%d  ",data[i]);
   quickSort(data, 0, n - 1);
-  printf("Sorted array in ascending order: \n");
-  printArray(data, n);
+  printf("\nSorted array in ascending order: \n");
+  for (int i = 0; i < n; i++) 
+    printf("%d  ",data[i]);
 }
